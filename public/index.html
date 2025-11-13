@@ -1,1 +1,177 @@
-Rama base
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Login - SIMAP</title>
+    <link rel="stylesheet" href="/public/assets/styles/styles.css">
+</head>
+<body>
+    <!-- SECCIÓN DE LOGIN -->
+    <div id="loginSection">
+        <div class="login-container">
+            <!-- ESPACIO PARA EL LOGO -->
+            <div class="logo-container">
+                <img src="images//lgo.PNG" alt="Logo SIMAP" id="loginLogo">
+             
+            </div>
+
+            <div class="login-header">
+                <h1>Bienvenido a SIMAP</h1>
+                <p>Inicia sesión en tu cuenta</p>
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            class="form-input" 
+                            placeholder="tu@email.com"
+                            required
+                        >
+                        <span class="input-icon">@</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            class="form-input" 
+                            placeholder="••••••••"
+                            required
+                        >
+                        <span class="input-icon">*</span>
+                        <button type="button" class="toggle-password" id="togglePassword">
+                            👁️
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="remember">
+                        <span>Recordarme</span>
+                    </label>
+                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <button type="submit" class="btn-login">Iniciar Sesión</button>
+
+                <div class="alert" id="alert"></div>
+            </form>
+
+            <div class="register-link">
+                <p>¿No tienes cuenta? <a href="#">Regístrate aquí</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCION MENU -->
+    <div id="dashboardSection" class="hidden">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1>SIMAP</h1>
+                <div class="user-info">
+                    <span id="userEmail">usuario@email.com</span>
+                    <button id="logoutBtn" class="btn-logout">Cerrar Sesión</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- VISTA PRINCIPAL DEL DASHBOARD -->
+        <div id="dashboardHome">
+            <main class="dashboard-main">
+                <div class="welcome-section">
+                    <h2>¡Bienvenido a SIMAP👋</h2>
+                    <p>Has iniciado sesión correctamente</p>
+                </div>
+
+                <div class="cards-grid">
+                    <div class="card" data-section="sistema-alertas">
+                        <div class="card-icon">🚨</div>
+                        <h3>SISTEMA DE ALERTAS</h3>
+                        <p>Ver alertas del sistema</p>
+                    </div>
+
+                    <div class="card" data-section="gestion">
+                        <div class="card-icon">📁</div>
+                        <h3>Gestión Operativa</h3>
+                        <p>Gestión de operaciones</p>
+                    </div>
+
+                    <div class="card" data-section="analisis">
+                        <div class="card-icon">⚙️</div>
+                        <h3>Análisis Ambiental</h3>
+                        <p>Análisis del ambiente</p>
+                    </div>
+
+                    <div class="card" data-section="investigacion">
+                        <div class="card-icon">🔬</div>
+                        <h3>Investigación Avanzada</h3>
+                        <p>Investigación científica</p>
+                    </div>
+
+                    <div class="card" data-section="comunidad">
+                        <div class="card-icon">👥</div>
+                        <h3>Comunidad</h3>
+                        <p>Gestión comunitaria</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- SECCIÓN SISTEMA DE ALERTAS -->
+        <div id="sistemaAlertasSection" class="hidden section-content">
+            <button class="btn-back">← Volver al Dashboard</button>
+            <div class="content-box">
+                <h2>🚨 Sistema de Alertas</h2>
+                <!-- ESPACIO VACÍO PARA TU CONTENIDO -->
+            </div>
+        </div>
+
+        <!-- SECCIÓN GESTIÓN OPERATIVA -->
+        <div id="gestionSection" class="hidden section-content">
+            <button class="btn-back">← Volver al Dashboard</button>
+            <div class="content-box">
+                <h2>📁 Gestión Operativa</h2>
+                <!-- ESPACIO VACÍO PARA TU CONTENIDO -->
+            </div>
+        </div>
+
+        <!-- SECCIÓN ANÁLISIS AMBIENTAL -->
+        <div id="analisisSection" class="hidden section-content">
+            <button class="btn-back">← Volver al Dashboard</button>
+            <div class="content-box">
+                <h2>⚙️ Análisis Ambiental</h2>
+                <!-- ESPACIO VACÍO PARA TU CONTENIDO -->
+            </div>
+        </div>
+
+        <!-- SECCIÓN INVESTIGACIÓN AVANZADA -->
+        <div id="investigacionSection" class="hidden section-content">
+            <button class="btn-back">← Volver al Dashboard</button>
+            <div class="content-box">
+                <h2>🔬 Investigación Avanzada</h2>
+                <!-- ESPACIO VACÍO PARA TU CONTENIDO -->
+            </div>
+        </div>
+
+        <!-- SECCIÓN COMUNIDAD -->
+        <div id="comunidadSection" class="hidden section-content">
+            <button class="btn-back">← Volver al Dashboard</button>
+            <div class="content-box">
+                <h2>👥 Comunidad</h2>
+                <!-- ESPACIO VACÍO PARA TU CONTENIDO -->
+            </div>
+        </div>
+    </div>
+
+    <script src="/public/assets/styles/scripts/main.js"></script>
+</body>
+</html>
