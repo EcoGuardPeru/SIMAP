@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Login - SIMAP</title>
     <link rel="stylesheet" href="/public/assets/styles/styles.css">
+    <link rel="stylesheet" href="/public/assets/styles/AnalisisAmbiental.css">
+    <link rel="stylesheet" href="/public/assets/styles/comunidad.css">
+    <link rel="stylesheet" href="/public/assets/styles/sistemaAlertas.css">
 </head>
 <body>
     <!-- SECCIÓN DE LOGIN -->
@@ -131,9 +134,18 @@
             <button class="btn-back">← Volver al Dashboard</button>
             <div class="content-box">
                 <h2>🚨 Sistema de Alertas</h2>
-                <!-- ESPACIO VACÍO PARA TU CONTENIDO -->
+                <!-- ESPACIO VACÍO PARA TU CONTENIDO --> 
+                
+                
+
+
+
             </div>
         </div>
+
+
+
+
 
         <!-- SECCIÓN GESTIÓN OPERATIVA -->
         <div id="gestionSection" class="hidden section-content">
@@ -143,13 +155,160 @@
                 <!-- ESPACIO VACÍO PARA TU CONTENIDO -->
             </div>
         </div>
+        
 
         <!-- SECCIÓN ANÁLISIS AMBIENTAL -->
         <div id="analisisSection" class="hidden section-content">
             <button class="btn-back">← Volver al Dashboard</button>
             <div class="content-box">
                 <h2>⚙️ Análisis Ambiental</h2>
-                <!-- ESPACIO VACÍO PARA TU CONTENIDO -->
+               <section class="AnalisisAmbiental">
+    <div class="container">
+        <div class="page-header">
+            <h2>Módulo de Investigación Científica</h2>
+            <p>Herramientas avanzadas para análisis ambiental y conservación</p>
+        </div>
+
+        <div class="metrics">
+            <div class="metric-card">
+                <h3>Áreas Monitoreadas</h3>
+                <div class="metric-value">76</div>
+            </div>
+            <div class="metric-card">
+                <h3>Alertas Activas</h3>
+                <div class="metric-value">12</div>
+            </div>
+            <div class="metric-card">
+                <h3>Datasets Disponibles</h3>
+                <div class="metric-value">248</div>
+            </div>
+        </div>
+            <div class="main-content">
+                <h3>INV_DATA - Gestión de Datos de Investigación</h3>
+                <p>Acceda a datasets ambientales, imágenes satelitales y herramientas de procesamiento para sus investigaciones.</p>
+                
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        MAPA INTERACTIVO - Visualización de Áreas Protegidas y Datos Ambientales
+                    </div>
+                    <div class="map-controls">
+                        <h4>Capas de Información</h4>
+                        <div class="layer-control">
+                            <label>
+                                <input type="checkbox" checked> Deforestación
+                            </label>
+                        </div>
+                        <div class="layer-control">
+                            <label>
+                                <input type="checkbox" checked> Índice NDVI
+                            </label>
+                        </div>
+                        <div class="layer-control">
+                            <label>
+                                <input type="checkbox"> Temperatura
+                            </label>
+                        </div>
+                        <div class="layer-control">
+                            <label>
+                                <input type="checkbox"> Precipitación
+                            </label>
+                        </div>
+                        <div class="layer-control">
+                            <label>
+                                <input type="checkbox" checked> Especies en Peligro
+                            </label>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%; margin-top: 10px;">Aplicar Cambios</button>
+                    </div>
+                </div>
+                
+                <div class="analysis-tools">
+                    <div class="tool-main">
+                        <h4>Superposición de Variables Ambientales</h4>
+                        <p>Seleccione las variables que desea superponer en el mapa para analizar correlaciones.</p>
+                        <div class="tool-options">
+                            <div class="form-group">
+                                <label for="variable1">Variable Principal:</label>
+                                <select id="variable1" class="form-control">
+                                    <option value="ndvi">Índice NDVI (Vegetación)</option>
+                                    <option value="temp">Temperatura</option>
+                                    <option value="precip">Precipitación</option>
+                                    <option value="deforest">Deforestación</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="variable2">Variable Secundaria:</label>
+                                <select id="variable2" class="form-control">
+                                    <option value="temp">Temperatura</option>
+                                    <option value="precip">Precipitación</option>
+                                    <option value="ndvi">Índice NDVI (Vegetación)</option>
+                                    <option value="species">Distribución de Especies</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="timeRange">Rango Temporal:</label>
+                                <select id="timeRange" class="form-control">
+                                    <option value="1week">Última Semana</option>
+                                    <option value="1month">Último Mes</option>
+                                    <option value="6months">Últimos 6 Meses</option>
+                                    <option value="1year">Último Año</option>
+                                    <option value="custom">Personalizado</option>
+                                </select>
+                            </div>
+                            
+                            <button class="btn btn-primary">Aplicar Análisis</button>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-sidebar">
+                        <h4>Descarga de Datasets</h4>
+                        <p>Seleccione el tipo de datos que necesita para su investigación:</p>
+                        
+                        <div class="form-group">
+                            <label for="dataType">Tipo de Dataset:</label>
+                            <select id="dataType" class="form-control">
+                                <option value="satellite">Imágenes Satelitales</option>
+                                <option value="deforest">Datos de Deforestación</option>
+                                <option value="biodiversity">Datos de Biodiversidad</option>
+                                <option value="climate">Datos Climáticos</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="format">Formato de Descarga:</label>
+                            <select id="format" class="form-control">
+                                <option value="csv">CSV</option>
+                                <option value="geojson">GeoJSON</option>
+                                <option value="kml">KML</option>
+                                <option value="shp">Shapefile</option>
+                            </select>
+                        </div>
+                        
+                        <button class="btn btn-secondary">Descargar Dataset</button>
+                    </div>
+                </div>
+                
+                <div class="modules">
+                    <div class="module-card">
+                        <h3>Imágenes Multiespectrales</h3>
+                        <p>Acceda a imágenes satelitales multiespectrales (NDVI, NIR) para evaluar la salud de la vegetación.</p>
+                        <button class="btn btn-primary">Acceder</button>
+                    </div>
+                    
+                    <div class="module-card">
+                        <h3>Datasets Etiquetados</h3>
+                        <p>Descargue datasets limpios y etiquetados de eventos ambientales para entrenar modelos de Machine Learning.</p>
+                        <button class="btn btn-primary">Explorar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+         </div>
+            </section>
+
+
             </div>
         </div>
 
@@ -190,7 +349,7 @@
                 
                             <div class="grafico">
                                 <h2>Tendencia deforestación en Madre de Dios</h2>
-                                <img src="image1.png" alt="Gráficos de tendencia">
+                                <img src="/public/images/image1.png" alt="Gráficos de tendencia">
                                 <p>Año actual: <b>2025</b></p>
                                 <p>Área deforestada: <b>925 ha</b> (+8% respecto 2024)</p>
                                 <a href="#" class="btn">Ver evolución histórica</a>
@@ -260,7 +419,7 @@
                 
                             <div class="card">
                                 <h2>Clasificación de Imágenes Satelitales</h2>
-                                <img src="puno.png" alt="Clasificación de imágenes">
+                                <img src="/public/images/puno.png" alt="Clasificación de imágenes">
                                 <p>Región de análisis: <b>Puno</b><br>
                                    Última segmentación: <b>15/11/2025</b><br>
                                    <b>Detección:</b> <span class="alert">54 poligonales de cambio</span>
@@ -271,7 +430,7 @@
                             <div class="card">
                                 <h2>Medición Geoespacial</h2>
                                 <p>Dibuja áreas y calcula superficies impactadas.</p>
-                                <img src="medicion_geoespacial.png" alt="Medición Geoespacial">
+                                <img src="/public/images/medicion_geoespacial.png" alt="Medición Geoespacial">
                                 <p>Zona de estudio: <b>Área de amortiguamiento</b><br>
                                    <b>Medición actual:</b> 6,200 ha
                                 </p>
@@ -280,7 +439,7 @@
                 
                             <div class="card">
                                 <h2>Alertas Inteligentes IoT</h2>
-                                <img src="alertas.png" alt="Alertas IoT">
+                                <img src="/public/images/alertas.png" alt="Alertas IoT">
                                 <p><b>Sensores activos:</b> 15<br>
                                    <b>Alertas último mes:</b> 3 por ruido, 7 por movimiento
                                 </p>
@@ -289,7 +448,7 @@
                 
                             <div class="card">
                                 <h2>Monitoreo de Restauración</h2>
-                                <img src="monitoreo.png" alt="Monitoreo restauración">
+                                <img src="/public/images/monitoreo.png" alt="Monitoreo restauración">
                                 <p>Zona: <b>Alto Mayo</b><br>
                                    <b>NDVI promedio:</b> 0.69<br>
                                    <b>Progreso:</b> +17% desde 2023
@@ -317,7 +476,97 @@
             <button class="btn-back">← Volver al Dashboard</button>
             <div class="content-box">
                 <h2>👥 Comunidad</h2>
-                <!-- ESPACIO VACÍO PARA TU CONTENIDO -->
+                <div class="sidebar">
+      <h2>COMUNIDAD CIENTÍFICA</h2>
+
+      <h3>Foro de discusión</h3>
+      <a href="#categorias">Categorías temáticas</a>
+      <a href="#hilos">Hilos de conversación</a>
+      <a href="#crear-tema">Crear nuevo tema</a>
+      <a href="#buscar-foros">Búsqueda en foros</a>
+
+      <h3>Proyectos colaborativos</h3>
+      <a href="#mis-proyectos">Mis proyectos</a>
+      <a href="#publicos">Proyectos públicos</a>
+      <a href="#crear-proyecto">Crear proyecto</a>
+
+      <h3>Publicaciones y resultados</h3>
+      <a href="#publicaciones">Ver publicaciones</a>
+
+      <h3>API de datos</h3>
+      <a href="#documentacion">Documentación</a>
+      <a href="#endpoints">Endpoints disponibles</a>
+    </div>
+
+    <!-- =====================================
+            CONTENIDO
+======================================= -->
+    <div class="content">
+      <!-- Foro -->
+      <section id="categorias">
+        <h2>Categorías temáticas</h2>
+        <div class="card pink">Ejemplo de categoría 1</div>
+        <div class="card pink">Ejemplo de categoría 2</div>
+        <div class="card pink">Ejemplo de categoría 3</div>
+      </section>
+
+      <section id="hilos">
+        <h2>Hilos de conversación</h2>
+        <div class="card lightpink">Hilo 1</div>
+        <div class="card lightpink">Hilo 2</div>
+        <div class="card lightpink">Hilo 3</div>
+      </section>
+
+      <section id="crear-tema">
+        <h2>Crear nuevo tema</h2>
+        <div class="card lightpink">Formulario ficticio aquí</div>
+      </section>
+
+      <section id="buscar-foros">
+        <h2>Búsqueda en foros</h2>
+        <div class="card lightpink">Campo de búsqueda (visual)</div>
+      </section>
+
+      <!-- Proyectos -->
+      <section id="mis-proyectos">
+        <h2>Mis proyectos</h2>
+        <div class="card red">Proyecto personal 1</div>
+        <div class="card red">Proyecto personal 2</div>
+      </section>
+
+      <section id="publicos">
+        <h2>Proyectos públicos</h2>
+        <div class="card red">Proyecto público A</div>
+        <div class="card red">Proyecto público B</div>
+      </section>
+
+      <section id="crear-proyecto">
+        <h2>Crear proyecto</h2>
+        <div class="card red">Formulario ficticio aquí</div>
+      </section>
+
+      <!-- Publicaciones -->
+      <section id="publicaciones">
+        <h2>Publicaciones y resultados</h2>
+        <div class="card blue">Publicación 1</div>
+        <div class="card blue">Publicación 2</div>
+      </section>
+
+      <!-- API -->
+      <section id="documentacion">
+        <h2>Documentación de la API</h2>
+        <div class="card green">Descripción general de la API</div>
+        <div class="card green">Guía de uso</div>
+      </section>
+
+      <section id="endpoints">
+        <h2>Endpoints disponibles</h2>
+        <div class="card green">GET /datos</div>
+        <div class="card green">POST /subir</div>
+      </section>
+    </div>
+
+               
             </div>
         </div>
     </div>
