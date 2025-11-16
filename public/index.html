@@ -134,152 +134,151 @@
             <div class="content-box">
                 <h2>🚨 Sistema de Alertas</h2>
                 <!-- ESPACIO VACÍO PARA TU CONTENIDO --> 
-                <div id="modulo-alertas">
-            <section class="registro-incidentes">
+                <section class="registro-incidentes">
         <h1>Registro de Nuevo Incidente</h1>
         <form>
-      <label>Ubicación GPS:</label>
-      <input type="text" placeholder="-12.032, -77.024">
-      <label>Adjuntar Evidencia Fotográfica:</label>
-      <input type="file">
-      <label>Clasificación de severidad:</label>
-      <select>
-        <option>Baja</option>
-        <option>Media</option>
-        <option>Alta</option>
-      </select>
-      <label>Descripción del incidente:</label>
-      <textarea placeholder="Describe la situación detectada..."></textarea>
-      <button type="submit">Reportar Incidente</button>
-    </form>
-    <div class="historial-incidentes">
-      <h3>Historial de Incidentes Recientes</h3>
-      <ul>
-        <li><b>15/11 - 17:24</b> | Deforestación | -11.982, -76.983 | <span class="alert">Alta</span></li>
-        <li><b>15/11 - 16:10</b> | Humo detectado | -12.046, -77.029 | Media</li>
-        <li><b>15/11 - 15:42</b> | Ruido maquinaria | -12.015, -77.012 | Baja</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="planificador-rutas">
-    <h1>Ruta de Respuesta</h1>
-    <p>Navegación automática a la alerta activa más cercana.</p>
-    <ul>
-      <li><b>Punto de destino:</b> Reserva Tambopata (Incendio)</li>
-      <li><b>Puntos de interés en ruta:</b> Caseta 2, Arroyo El Naranjo, Mirador Sur</li>
-      <li><b>Tiempo estimado de llegada:</b> <span class="alert">12 min</span></li>
-      <li><b>Estado tráfico:</b> Normal</li>
-    </ul>
-    <button>Planificar nueva ruta</button>
-    <div class="rutas-historial">
-      <h3>Historial de rutas recientes</h3>
-      <ul>
-        <li>14/11 18:05 | Deforestación | Ruta completada | 14 min</li>
-        <li>13/11 10:22 | Sospecha de quema | Ruta incompleta | -</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="dashboard-alertas">
-    <h1>Dashboard de Alertas</h1>
-    <div class="dashboard-resumen">
-      <div class="card-resumen">
-        <h2>Alertas Activas</h2>
-        <div class="resumen-num">5</div>
-        <p>Última actualización:<br>15/11/2025 17:35</p>
-      </div>
-      <div class="card-resumen">
-        <h2>Prioridad Alta</h2>
-        <div class="resumen-num alert">2</div>
-        <p>Zona: Reserva Tambopata<br>Zona: Alto Mayo</p>
-      </div>
-      <div class="card-resumen">
-        <h2>Notificaciones</h2>
-        <div class="resumen-num">3</div>
-        <ul>
-          <li>Incendio detectado (Tambopata)</li>
-          <li>Desmonte sospechoso reportado</li>
-          <li>Sensor de humo activado</li>
-        </ul>
-      </div>
-    </div>
-    <div class="filtros">
-      <button>Alta prioridad</button>
-      <button>Nuevas</button>
-      <button>En curso</button>
-      <button>Finalizadas</button>
-    </div>
-    <div class="dashboard-table">
-      <h3>Listado de Alertas Recientes</h3>
-      <table>
-        <tr>
-          <th>ID</th>
-          <th>Tipo</th>
-          <th>Zona</th>
-          <th>Estado</th>
-          <th>Severidad</th>
-          <th>Hora</th>
-        </tr>
-        <tr>
-          <td>#1043</td>
-          <td>Incendio</td>
-          <td>Tambopata</td>
-          <td>Activa</td>
-          <td><span class="alert">Alta</span></td>
-          <td>17:27</td>
-        </tr>
-        <tr>
-          <td>#1042</td>
-          <td>Desmonte</td>
-          <td>Alto Mayo</td>
-          <td>Activa</td>
-          <td>Alta</td>
-          <td>16:49</td>
-        </tr>
-        <tr>
-          <td>#1041</td>
-          <td>Ruido</td>
-          <td>P.N. Manu</td>
-          <td>En ruta</td>
-          <td>Media</td>
-          <td>15:22</td>
-        </tr>
-      </table>
-    </div>
-  </section>
-
-  <section class="mapa-calor">
-    <h1>Mapa de Calor de Alertas</h1>
-    <img src="mapa.png" alt="Mapa de calor de alertas">
-    <div class="map-filters">
-      <h3>Filtros rápidos</h3>
-      <button>Incendios</button>
-      <button>Desmontes</button>
-      <button>Tráfico vehículos</button>
-      <button>Todos</button>
-    </div>
-    <ul>
-      <li>4 zonas críticas desplegadas (rojo)</li>
-      <li>6 zonas bajo vigilancia (naranja/amarillo)</li>
-      <li>2 zonas restauradas recientemente (verde)</li>
-    </ul>
-    <div class="mini-metrics">
-      <div><b>Total alertas hoy:</b> 9</div>
-      <div><b>Alertas resueltas:</b> 5</div>
-      <div><b>Actualización mapa:</b> 17:35</div>
-    </div>
+            <label>Ubicación GPS:</label>
+            <input type="text" placeholder="-12.032, -77.024">
+            <label>Adjuntar Evidencia Fotográfica:</label>
+            <input type="file">
+            <label>Clasificación de severidad:</label>
+            <select>
+                <option>Baja</option>
+                <option>Media</option>
+                <option>Alta</option>
+            </select>
+            <label>Descripción del incidente:</label>
+            <textarea placeholder="Describe la situación detectada..."></textarea>
+            <button type="submit">Reportar Incidente</button>
+        </form>
+        <div class="historial-incidentes">
+            <h3>Historial de Incidentes Recientes</h3>
+            <ul>
+                <li><b>15/11 - 17:24</b> | Deforestación | -11.982, -76.983 | <span class="alert">Alta</span></li>
+                <li><b>15/11 - 16:10</b> | Humo detectado | -12.046, -77.029 | Media</li>
+                <li><b>15/11 - 15:42</b> | Ruido maquinaria | -12.015, -77.012 | Baja</li>
+            </ul>
+        </div>
     </section>
 
-  
-     </div>
+    <!-- Ruta de Respuesta -->
+    <section class="planificador-rutas">
+        <h1>Ruta de Respuesta</h1>
+        <p>Navegación automática a la alerta activa más cercana.</p>
+        <ul>
+            <li><b>Punto de destino:</b> Reserva Tambopata (Incendio)</li>
+            <li><b>Puntos de interés en ruta:</b> Caseta 2, Arroyo El Naranjo, Mirador Sur</li>
+            <li><b>Tiempo estimado de llegada:</b> <span class="alert">12 min</span></li>
+            <li><b>Estado tráfico:</b> Normal</li>
+        </ul>
+        <button>Planificar nueva ruta</button>
+        <div class="rutas-historial">
+            <h3>Historial de rutas recientes</h3>
+            <ul>
+                <li>14/11 18:05 | Deforestación | Ruta completada | 14 min</li>
+                <li>13/11 10:22 | Sospecha de quema | Ruta incompleta | -</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Dashboard de Alertas -->
+    <section class="dashboard-alertas">
+        <h1>Dashboard de Alertas</h1>
+        <div class="dashboard-resumen">
+            <div class="card-resumen">
+                <h2>Alertas Activas</h2>
+                <div class="resumen-num">5</div>
+                <p>Última actualización:<br>15/11/2025 17:35</p>
+            </div>
+            <div class="card-resumen">
+                <h2>Prioridad Alta</h2>
+                <div class="resumen-num alert">2</div>
+                <p>Zona: Reserva Tambopata<br>Zona: Alto Mayo</p>
+            </div>
+            <div class="card-resumen">
+                <h2>Notificaciones</h2>
+                <div class="resumen-num">3</div>
+                <ul>
+                    <li>Incendio detectado (Tambopata)</li>
+                    <li>Desmonte sospechoso reportado</li>
+                    <li>Sensor de humo activado</li>
+                </ul>
+            </div>
+        </div>
+        <div class="filtros">
+            <button>Alta prioridad</button>
+            <button>Nuevas</button>
+            <button>En curso</button>
+            <button>Finalizadas</button>
+        </div>
+        <div class="dashboard-table">
+            <h3>Listado de Alertas Recientes</h3>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Tipo</th>
+                    <th>Zona</th>
+                    <th>Estado</th>
+                    <th>Severidad</th>
+                    <th>Hora</th>
+                </tr>
+                <tr>
+                    <td>#1043</td>
+                    <td>Incendio</td>
+                    <td>Tambopata</td>
+                    <td>Activa</td>
+                    <td><span class="alert">Alta</span></td>
+                    <td>17:27</td>
+                </tr>
+                <tr>
+                    <td>#1042</td>
+                    <td>Desmonte</td>
+                    <td>Alto Mayo</td>
+                    <td>Activa</td>
+                    <td>Alta</td>
+                    <td>16:49</td>
+                </tr>
+                <tr>
+                    <td>#1041</td>
+                    <td>Ruido</td>
+                    <td>P.N. Manu</td>
+                    <td>En ruta</td>
+                    <td>Media</td>
+                    <td>15:22</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- Mapa de Calor -->
+    <section class="mapa-calor">
+        <h1>Mapa de Calor de Alertas</h1>
+        <img src="mapa.png" alt="Mapa de calor de alertas">
+        <div class="map-filters">
+            <h3>Filtros rápidos</h3>
+            <button>Incendios</button>
+            <button>Desmontes</button>
+            <button>Tráfico vehículos</button>
+            <button>Todos</button>
+        </div>
+        <ul>
+            <li>4 zonas críticas desplegadas (rojo)</li>
+            <li>6 zonas bajo vigilancia (naranja/amarillo)</li>
+            <li>2 zonas restauradas recientemente (verde)</li>
+        </ul>
+        <div class="mini-metrics">
+            <div><b>Total alertas hoy:</b> 9</div>
+            <div><b>Alertas resueltas:</b> 5</div>
+            <div><b>Actualización mapa:</b> 17:35</div>
+        </div>
+    </section>
+</main>
 
 
 
 
-
-    </div>
-    </div>
+            </div>
+        </div>
 
 
 
