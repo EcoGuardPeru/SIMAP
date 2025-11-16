@@ -158,7 +158,157 @@
             <button class="btn-back">← Volver al Dashboard</button>
             <div class="content-box">
                 <h2>🔬 Investigación Avanzada</h2>
-                <!-- ESPACIO VACÍO PARA TU CONTENIDO -->
+                <head>
+                    <meta charset="UTF-8">
+                    <title>SIMAP • Panel Unificado</title>
+                
+                    <!-- Mantienes ambos estilos para conservar el diseño EXACTO -->
+                    <link rel="stylesheet" href="/public/assets/styles/Investigacion_avanzada.css">
+                    <link rel="stylesheet" href="/public/assets/styles/styles.css">
+                </head>
+                
+                <body>
+                
+                <!-- ================= HEADER ================= -->
+                <header>
+                    <nav>
+                        <div class="logo">EcoGuard Perú</div>
+                        <ul>
+                            <li><a href="#estadistico" class="active">Análisis Estadístico</a></li>
+                            <li><a href="#herramientas">Herramientas Especializadas</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                
+                <main>
+                
+                    <!-- =============== SECCIÓN 1 — ANÁLISIS ESTADÍSTICO ================= -->
+                    <section class="panel" id="estadistico">
+                        <h1>Panel de Tendencias y Modelos Predictivos</h1>
+                
+                        <div class="dashboard">
+                
+                            <div class="grafico">
+                                <h2>Tendencia deforestación en Madre de Dios</h2>
+                                <img src="image1.png" alt="Gráficos de tendencia">
+                                <p>Año actual: <b>2025</b></p>
+                                <p>Área deforestada: <b>925 ha</b> (+8% respecto 2024)</p>
+                                <a href="#" class="btn">Ver evolución histórica</a>
+                            </div>
+                
+                            <div class="modelo">
+                                <h2>Predicción de Incendios 2026</h2>
+                                <table class="table">
+                                    <tr>
+                                        <th>Zona</th>
+                                        <th>Probabilidad</th>
+                                        <th>Riesgo</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Reserva Los Amigos</td>
+                                        <td>52%</td>
+                                        <td><span class="alert">Alto</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>P. Nacional Manu</td>
+                                        <td>21%</td>
+                                        <td>Medio</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Zona Tambopata</td>
+                                        <td>33%</td>
+                                        <td>Medio</td>
+                                    </tr>
+                                </table>
+                                <a href="#" class="btn">Descargar reporte PDF</a>
+                            </div>
+                
+                        </div>
+                
+                        <div class="matriz">
+                            <h2>Matriz de Correlación de Amenazas</h2>
+                            <table class="table">
+                                <tr>
+                                    <th>Amenaza</th>
+                                    <th>Temperatura</th>
+                                    <th>NDVI</th>
+                                    <th>Presencia Humana</th>
+                                </tr>
+                                <tr>
+                                    <td>Incendios</td>
+                                    <td>0.76</td>
+                                    <td>-0.52</td>
+                                    <td>0.29</td>
+                                </tr>
+                                <tr>
+                                    <td>Deforestación</td>
+                                    <td>0.44</td>
+                                    <td>-0.81</td>
+                                    <td>0.63</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </section>
+                
+                
+                
+                    <!-- =============== SECCIÓN 2 — HERRAMIENTAS ESPECIALIZADAS ================= -->
+                    <section class="panel" id="herramientas">
+                        <h1>Herramientas Especializadas</h1>
+                
+                        <div class="herramientas-grid">
+                
+                            <div class="card">
+                                <h2>Clasificación de Imágenes Satelitales</h2>
+                                <img src="puno.png" alt="Clasificación de imágenes">
+                                <p>Región de análisis: <b>Puno</b><br>
+                                   Última segmentación: <b>15/11/2025</b><br>
+                                   <b>Detección:</b> <span class="alert">54 poligonales de cambio</span>
+                                </p>
+                                <a href="#" class="btn">Ejecutar nueva segmentación</a>
+                            </div>
+                
+                            <div class="card">
+                                <h2>Medición Geoespacial</h2>
+                                <p>Dibuja áreas y calcula superficies impactadas.</p>
+                                <img src="medicion_geoespacial.png" alt="Medición Geoespacial">
+                                <p>Zona de estudio: <b>Área de amortiguamiento</b><br>
+                                   <b>Medición actual:</b> 6,200 ha
+                                </p>
+                                <a href="#" class="btn">Dibujar polígono</a>
+                            </div>
+                
+                            <div class="card">
+                                <h2>Alertas Inteligentes IoT</h2>
+                                <img src="alertas.png" alt="Alertas IoT">
+                                <p><b>Sensores activos:</b> 15<br>
+                                   <b>Alertas último mes:</b> 3 por ruido, 7 por movimiento
+                                </p>
+                                <a href="#" class="btn">Ver log de sensores</a>
+                            </div>
+                
+                            <div class="card">
+                                <h2>Monitoreo de Restauración</h2>
+                                <img src="monitoreo.png" alt="Monitoreo restauración">
+                                <p>Zona: <b>Alto Mayo</b><br>
+                                   <b>NDVI promedio:</b> 0.69<br>
+                                   <b>Progreso:</b> +17% desde 2023
+                                </p>
+                                <a href="#" class="btn">Ver evolución temporal</a>
+                            </div>
+                
+                        </div>
+                    </section>
+                
+                </main>
+                
+                
+                <!-- ================= FOOTER ================= -->
+                <footer>
+                    <p>&copy; 2025 EcoGuard Perú</p>
+                </footer>
+                
+                </body>
             </div>
         </div>
 
@@ -171,6 +321,10 @@
             </div>
         </div>
     </div>
+
+    <script src="/public/assets/styles/scripts/main.js"></script>
+</body>
+</html>
 
     <script src="/public/assets/styles/scripts/main.js"></script>
 </body>
