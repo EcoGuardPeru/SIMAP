@@ -1,0 +1,251 @@
+
+.AnalisisAmbiental{
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    gap: 7rem;
+    justify-content: center;
+}
+        :root {
+            --verde-principal: #008f39;
+            --azul-secundario: #2A4DAF;
+            --gris-claro: #E0E0E0;
+            --gris-medio: #A0A0A0;
+            --negro: #010101;
+            --blanco: #ffffff;
+            --sombra: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        
+        .btn-secondary:hover {
+            background-color: #244099;
+        }
+        
+        /* Contenido principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .page-header {
+            margin-bottom: 2rem;
+        }
+        
+        .page-header h2 {
+            font-size: 1.8rem;
+            color: var(--verde-principal);
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-header p {
+            color: var(--gris-medio);
+        }
+        
+        .epic-list {
+            list-style: none;
+        }
+        
+        .epic-list li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .epic-list a {
+            display: block;
+            padding: 0.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--negro);
+            transition: background-color 0.3s;
+        }
+        
+        .epic-list a:hover {
+            background-color: var(--gris-claro);
+        }
+        
+        .epic-list a.active {
+            background-color: var(--verde-principal);
+            color: var(--blanco);
+        }
+        
+        .main-content {
+            background-color: var(--blanco);
+            border-radius: 8px;
+            box-shadow: var(--sombra);
+            padding: 1.5rem;
+        }
+        
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .metric-card {
+            background-color: var(--blanco);
+            border-radius: 8px;
+            box-shadow: var(--sombra);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .metric-card h3 {
+            font-size: 1rem;
+            color: var(--gris-medio);
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--verde-principal);
+        }
+        
+        /* Módulos de funcionalidad */
+        .modules {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .module-card {
+            background-color: var(--blanco);
+            border-radius: 8px;
+            box-shadow: var(--sombra);
+            padding: 1.5rem;
+            border-left: 4px solid var(--verde-principal);
+        }
+        
+        .module-card h3 {
+            color: var(--verde-principal);
+            margin-bottom: 1rem;
+        }
+        
+        .module-card p {
+            margin-bottom: 1rem;
+            color: var(--gris-medio);
+        }
+        
+        /* Mapa interactivo */
+        .map-container {
+            height: 400px;
+            background-color: var(--gris-claro);
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .map-placeholder {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background: linear-gradient(135deg, #e0f7e9 0%, #c8e6c9 100%);
+            color: var(--verde-principal);
+            font-weight: 500;
+        }
+        
+        .map-controls {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--blanco);
+            border-radius: 4px;
+            box-shadow: var(--sombra);
+            padding: 1rem;
+            width: 250px;
+        }
+        
+        .map-controls h4 {
+            margin-bottom: 0.8rem;
+            color: var(--verde-principal);
+        }
+        
+        .layer-control {
+            margin-bottom: 0.8rem;
+        }
+        
+        .layer-control label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .layer-control input {
+            margin-right: 0.5rem;
+        }
+        
+        /* Herramientas de análisis */
+        .analysis-tools {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .tool-main {
+            background-color: var(--blanco);
+            border-radius: 8px;
+            box-shadow: var(--sombra);
+            padding: 1.5rem;
+        }
+        
+        .tool-sidebar {
+            background-color: var(--blanco);
+            border-radius: 8px;
+            box-shadow: var(--sombra);
+            padding: 1.5rem;
+        }
+        
+        .tool-options {
+            margin-bottom: 1.5rem;
+        }
+        
+        .tool-options h4 {
+            margin-bottom: 0.8rem;
+            color: var(--verde-principal);
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--gris-claro);
+            border-radius: 4px;
+        }
+        @media (max-width: 768px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+            
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+            
+            .modules {
+                grid-template-columns: 1fr;
+            }
+            
+            .analysis-tools {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }

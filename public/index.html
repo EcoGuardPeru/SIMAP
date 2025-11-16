@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Login - SIMAP</title>
     <link rel="stylesheet" href="/public/assets/styles/styles.css">
+    <link rel="stylesheet" href="/public/assets/styles/AnalisisAmbiental.css">
+
 </head>
 <body>
     <!-- SECCIÓN DE LOGIN -->
@@ -149,7 +151,153 @@
             <button class="btn-back">← Volver al Dashboard</button>
             <div class="content-box">
                 <h2>⚙️ Análisis Ambiental</h2>
-                <!-- ESPACIO VACÍO PARA TU CONTENIDO -->
+               <section class="AnalisisAmbiental">
+    <div class="container">
+        <div class="page-header">
+            <h2>Módulo de Investigación Científica</h2>
+            <p>Herramientas avanzadas para análisis ambiental y conservación</p>
+        </div>
+
+        <div class="metrics">
+            <div class="metric-card">
+                <h3>Áreas Monitoreadas</h3>
+                <div class="metric-value">76</div>
+            </div>
+            <div class="metric-card">
+                <h3>Alertas Activas</h3>
+                <div class="metric-value">12</div>
+            </div>
+            <div class="metric-card">
+                <h3>Datasets Disponibles</h3>
+                <div class="metric-value">248</div>
+            </div>
+        </div>
+            <div class="main-content">
+                <h3>INV_DATA - Gestión de Datos de Investigación</h3>
+                <p>Acceda a datasets ambientales, imágenes satelitales y herramientas de procesamiento para sus investigaciones.</p>
+                
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        MAPA INTERACTIVO - Visualización de Áreas Protegidas y Datos Ambientales
+                    </div>
+                    <div class="map-controls">
+                        <h4>Capas de Información</h4>
+                        <div class="layer-control">
+                            <label>
+                                <input type="checkbox" checked> Deforestación
+                            </label>
+                        </div>
+                        <div class="layer-control">
+                            <label>
+                                <input type="checkbox" checked> Índice NDVI
+                            </label>
+                        </div>
+                        <div class="layer-control">
+                            <label>
+                                <input type="checkbox"> Temperatura
+                            </label>
+                        </div>
+                        <div class="layer-control">
+                            <label>
+                                <input type="checkbox"> Precipitación
+                            </label>
+                        </div>
+                        <div class="layer-control">
+                            <label>
+                                <input type="checkbox" checked> Especies en Peligro
+                            </label>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%; margin-top: 10px;">Aplicar Cambios</button>
+                    </div>
+                </div>
+                
+                <div class="analysis-tools">
+                    <div class="tool-main">
+                        <h4>Superposición de Variables Ambientales</h4>
+                        <p>Seleccione las variables que desea superponer en el mapa para analizar correlaciones.</p>
+                        <div class="tool-options">
+                            <div class="form-group">
+                                <label for="variable1">Variable Principal:</label>
+                                <select id="variable1" class="form-control">
+                                    <option value="ndvi">Índice NDVI (Vegetación)</option>
+                                    <option value="temp">Temperatura</option>
+                                    <option value="precip">Precipitación</option>
+                                    <option value="deforest">Deforestación</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="variable2">Variable Secundaria:</label>
+                                <select id="variable2" class="form-control">
+                                    <option value="temp">Temperatura</option>
+                                    <option value="precip">Precipitación</option>
+                                    <option value="ndvi">Índice NDVI (Vegetación)</option>
+                                    <option value="species">Distribución de Especies</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="timeRange">Rango Temporal:</label>
+                                <select id="timeRange" class="form-control">
+                                    <option value="1week">Última Semana</option>
+                                    <option value="1month">Último Mes</option>
+                                    <option value="6months">Últimos 6 Meses</option>
+                                    <option value="1year">Último Año</option>
+                                    <option value="custom">Personalizado</option>
+                                </select>
+                            </div>
+                            
+                            <button class="btn btn-primary">Aplicar Análisis</button>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-sidebar">
+                        <h4>Descarga de Datasets</h4>
+                        <p>Seleccione el tipo de datos que necesita para su investigación:</p>
+                        
+                        <div class="form-group">
+                            <label for="dataType">Tipo de Dataset:</label>
+                            <select id="dataType" class="form-control">
+                                <option value="satellite">Imágenes Satelitales</option>
+                                <option value="deforest">Datos de Deforestación</option>
+                                <option value="biodiversity">Datos de Biodiversidad</option>
+                                <option value="climate">Datos Climáticos</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="format">Formato de Descarga:</label>
+                            <select id="format" class="form-control">
+                                <option value="csv">CSV</option>
+                                <option value="geojson">GeoJSON</option>
+                                <option value="kml">KML</option>
+                                <option value="shp">Shapefile</option>
+                            </select>
+                        </div>
+                        
+                        <button class="btn btn-secondary">Descargar Dataset</button>
+                    </div>
+                </div>
+                
+                <div class="modules">
+                    <div class="module-card">
+                        <h3>Imágenes Multiespectrales</h3>
+                        <p>Acceda a imágenes satelitales multiespectrales (NDVI, NIR) para evaluar la salud de la vegetación.</p>
+                        <button class="btn btn-primary">Acceder</button>
+                    </div>
+                    
+                    <div class="module-card">
+                        <h3>Datasets Etiquetados</h3>
+                        <p>Descargue datasets limpios y etiquetados de eventos ambientales para entrenar modelos de Machine Learning.</p>
+                        <button class="btn btn-primary">Explorar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+         </div>
+            </section>
+
+
             </div>
         </div>
 
