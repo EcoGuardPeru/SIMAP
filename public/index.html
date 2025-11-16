@@ -6,7 +6,7 @@
     <title>Sistema de Login - SIMAP</title>
     <link rel="stylesheet" href="/public/assets/styles/styles.css">
     <link rel="stylesheet" href="/public/assets/styles/AnalisisAmbiental.css">
-
+    <link rel="stylesheet" href="/public/assets/styles/comunidad.css">
 </head>
 <body>
     <!-- SECCIÓN DE LOGIN -->
@@ -133,9 +133,157 @@
             <button class="btn-back">← Volver al Dashboard</button>
             <div class="content-box">
                 <h2>🚨 Sistema de Alertas</h2>
-                <!-- ESPACIO VACÍO PARA TU CONTENIDO -->
-            </div>
-        </div>
+                <!-- ESPACIO VACÍO PARA TU CONTENIDO --> 
+                <div id="modulo-alertas">
+            <section class="registro-incidentes">
+        <h1>Registro de Nuevo Incidente</h1>
+        <form>
+      <label>Ubicación GPS:</label>
+      <input type="text" placeholder="-12.032, -77.024">
+      <label>Adjuntar Evidencia Fotográfica:</label>
+      <input type="file">
+      <label>Clasificación de severidad:</label>
+      <select>
+        <option>Baja</option>
+        <option>Media</option>
+        <option>Alta</option>
+      </select>
+      <label>Descripción del incidente:</label>
+      <textarea placeholder="Describe la situación detectada..."></textarea>
+      <button type="submit">Reportar Incidente</button>
+    </form>
+    <div class="historial-incidentes">
+      <h3>Historial de Incidentes Recientes</h3>
+      <ul>
+        <li><b>15/11 - 17:24</b> | Deforestación | -11.982, -76.983 | <span class="alert">Alta</span></li>
+        <li><b>15/11 - 16:10</b> | Humo detectado | -12.046, -77.029 | Media</li>
+        <li><b>15/11 - 15:42</b> | Ruido maquinaria | -12.015, -77.012 | Baja</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="planificador-rutas">
+    <h1>Ruta de Respuesta</h1>
+    <p>Navegación automática a la alerta activa más cercana.</p>
+    <ul>
+      <li><b>Punto de destino:</b> Reserva Tambopata (Incendio)</li>
+      <li><b>Puntos de interés en ruta:</b> Caseta 2, Arroyo El Naranjo, Mirador Sur</li>
+      <li><b>Tiempo estimado de llegada:</b> <span class="alert">12 min</span></li>
+      <li><b>Estado tráfico:</b> Normal</li>
+    </ul>
+    <button>Planificar nueva ruta</button>
+    <div class="rutas-historial">
+      <h3>Historial de rutas recientes</h3>
+      <ul>
+        <li>14/11 18:05 | Deforestación | Ruta completada | 14 min</li>
+        <li>13/11 10:22 | Sospecha de quema | Ruta incompleta | -</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="dashboard-alertas">
+    <h1>Dashboard de Alertas</h1>
+    <div class="dashboard-resumen">
+      <div class="card-resumen">
+        <h2>Alertas Activas</h2>
+        <div class="resumen-num">5</div>
+        <p>Última actualización:<br>15/11/2025 17:35</p>
+      </div>
+      <div class="card-resumen">
+        <h2>Prioridad Alta</h2>
+        <div class="resumen-num alert">2</div>
+        <p>Zona: Reserva Tambopata<br>Zona: Alto Mayo</p>
+      </div>
+      <div class="card-resumen">
+        <h2>Notificaciones</h2>
+        <div class="resumen-num">3</div>
+        <ul>
+          <li>Incendio detectado (Tambopata)</li>
+          <li>Desmonte sospechoso reportado</li>
+          <li>Sensor de humo activado</li>
+        </ul>
+      </div>
+    </div>
+    <div class="filtros">
+      <button>Alta prioridad</button>
+      <button>Nuevas</button>
+      <button>En curso</button>
+      <button>Finalizadas</button>
+    </div>
+    <div class="dashboard-table">
+      <h3>Listado de Alertas Recientes</h3>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Tipo</th>
+          <th>Zona</th>
+          <th>Estado</th>
+          <th>Severidad</th>
+          <th>Hora</th>
+        </tr>
+        <tr>
+          <td>#1043</td>
+          <td>Incendio</td>
+          <td>Tambopata</td>
+          <td>Activa</td>
+          <td><span class="alert">Alta</span></td>
+          <td>17:27</td>
+        </tr>
+        <tr>
+          <td>#1042</td>
+          <td>Desmonte</td>
+          <td>Alto Mayo</td>
+          <td>Activa</td>
+          <td>Alta</td>
+          <td>16:49</td>
+        </tr>
+        <tr>
+          <td>#1041</td>
+          <td>Ruido</td>
+          <td>P.N. Manu</td>
+          <td>En ruta</td>
+          <td>Media</td>
+          <td>15:22</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="mapa-calor">
+    <h1>Mapa de Calor de Alertas</h1>
+    <img src="mapa.png" alt="Mapa de calor de alertas">
+    <div class="map-filters">
+      <h3>Filtros rápidos</h3>
+      <button>Incendios</button>
+      <button>Desmontes</button>
+      <button>Tráfico vehículos</button>
+      <button>Todos</button>
+    </div>
+    <ul>
+      <li>4 zonas críticas desplegadas (rojo)</li>
+      <li>6 zonas bajo vigilancia (naranja/amarillo)</li>
+      <li>2 zonas restauradas recientemente (verde)</li>
+    </ul>
+    <div class="mini-metrics">
+      <div><b>Total alertas hoy:</b> 9</div>
+      <div><b>Alertas resueltas:</b> 5</div>
+      <div><b>Actualización mapa:</b> 17:35</div>
+    </div>
+    </section>
+
+  
+     </div>
+
+
+
+
+
+    </div>
+    </div>
+
+
+
+
 
         <!-- SECCIÓN GESTIÓN OPERATIVA -->
         <div id="gestionSection" class="hidden section-content">
@@ -338,7 +486,7 @@
                 
                             <div class="grafico">
                                 <h2>Tendencia deforestación en Madre de Dios</h2>
-                                <img src="image1.png" alt="Gráficos de tendencia">
+                                <img src="/public/images/image1.png" alt="Gráficos de tendencia">
                                 <p>Año actual: <b>2025</b></p>
                                 <p>Área deforestada: <b>925 ha</b> (+8% respecto 2024)</p>
                                 <a href="#" class="btn">Ver evolución histórica</a>
@@ -408,7 +556,7 @@
                 
                             <div class="card">
                                 <h2>Clasificación de Imágenes Satelitales</h2>
-                                <img src="puno.png" alt="Clasificación de imágenes">
+                                <img src="/public/images/puno.png" alt="Clasificación de imágenes">
                                 <p>Región de análisis: <b>Puno</b><br>
                                    Última segmentación: <b>15/11/2025</b><br>
                                    <b>Detección:</b> <span class="alert">54 poligonales de cambio</span>
@@ -419,7 +567,7 @@
                             <div class="card">
                                 <h2>Medición Geoespacial</h2>
                                 <p>Dibuja áreas y calcula superficies impactadas.</p>
-                                <img src="medicion_geoespacial.png" alt="Medición Geoespacial">
+                                <img src="/public/images/medicion_geoespacial.png" alt="Medición Geoespacial">
                                 <p>Zona de estudio: <b>Área de amortiguamiento</b><br>
                                    <b>Medición actual:</b> 6,200 ha
                                 </p>
@@ -428,7 +576,7 @@
                 
                             <div class="card">
                                 <h2>Alertas Inteligentes IoT</h2>
-                                <img src="alertas.png" alt="Alertas IoT">
+                                <img src="/public/images/alertas.png" alt="Alertas IoT">
                                 <p><b>Sensores activos:</b> 15<br>
                                    <b>Alertas último mes:</b> 3 por ruido, 7 por movimiento
                                 </p>
@@ -437,7 +585,7 @@
                 
                             <div class="card">
                                 <h2>Monitoreo de Restauración</h2>
-                                <img src="monitoreo.png" alt="Monitoreo restauración">
+                                <img src="/public/images/monitoreo.png" alt="Monitoreo restauración">
                                 <p>Zona: <b>Alto Mayo</b><br>
                                    <b>NDVI promedio:</b> 0.69<br>
                                    <b>Progreso:</b> +17% desde 2023
@@ -465,7 +613,97 @@
             <button class="btn-back">← Volver al Dashboard</button>
             <div class="content-box">
                 <h2>👥 Comunidad</h2>
-                <!-- ESPACIO VACÍO PARA TU CONTENIDO -->
+                <div class="sidebar">
+      <h2>COMUNIDAD CIENTÍFICA</h2>
+
+      <h3>Foro de discusión</h3>
+      <a href="#categorias">Categorías temáticas</a>
+      <a href="#hilos">Hilos de conversación</a>
+      <a href="#crear-tema">Crear nuevo tema</a>
+      <a href="#buscar-foros">Búsqueda en foros</a>
+
+      <h3>Proyectos colaborativos</h3>
+      <a href="#mis-proyectos">Mis proyectos</a>
+      <a href="#publicos">Proyectos públicos</a>
+      <a href="#crear-proyecto">Crear proyecto</a>
+
+      <h3>Publicaciones y resultados</h3>
+      <a href="#publicaciones">Ver publicaciones</a>
+
+      <h3>API de datos</h3>
+      <a href="#documentacion">Documentación</a>
+      <a href="#endpoints">Endpoints disponibles</a>
+    </div>
+
+    <!-- =====================================
+            CONTENIDO
+======================================= -->
+    <div class="content">
+      <!-- Foro -->
+      <section id="categorias">
+        <h2>Categorías temáticas</h2>
+        <div class="card pink">Ejemplo de categoría 1</div>
+        <div class="card pink">Ejemplo de categoría 2</div>
+        <div class="card pink">Ejemplo de categoría 3</div>
+      </section>
+
+      <section id="hilos">
+        <h2>Hilos de conversación</h2>
+        <div class="card lightpink">Hilo 1</div>
+        <div class="card lightpink">Hilo 2</div>
+        <div class="card lightpink">Hilo 3</div>
+      </section>
+
+      <section id="crear-tema">
+        <h2>Crear nuevo tema</h2>
+        <div class="card lightpink">Formulario ficticio aquí</div>
+      </section>
+
+      <section id="buscar-foros">
+        <h2>Búsqueda en foros</h2>
+        <div class="card lightpink">Campo de búsqueda (visual)</div>
+      </section>
+
+      <!-- Proyectos -->
+      <section id="mis-proyectos">
+        <h2>Mis proyectos</h2>
+        <div class="card red">Proyecto personal 1</div>
+        <div class="card red">Proyecto personal 2</div>
+      </section>
+
+      <section id="publicos">
+        <h2>Proyectos públicos</h2>
+        <div class="card red">Proyecto público A</div>
+        <div class="card red">Proyecto público B</div>
+      </section>
+
+      <section id="crear-proyecto">
+        <h2>Crear proyecto</h2>
+        <div class="card red">Formulario ficticio aquí</div>
+      </section>
+
+      <!-- Publicaciones -->
+      <section id="publicaciones">
+        <h2>Publicaciones y resultados</h2>
+        <div class="card blue">Publicación 1</div>
+        <div class="card blue">Publicación 2</div>
+      </section>
+
+      <!-- API -->
+      <section id="documentacion">
+        <h2>Documentación de la API</h2>
+        <div class="card green">Descripción general de la API</div>
+        <div class="card green">Guía de uso</div>
+      </section>
+
+      <section id="endpoints">
+        <h2>Endpoints disponibles</h2>
+        <div class="card green">GET /datos</div>
+        <div class="card green">POST /subir</div>
+      </section>
+    </div>
+
+               
             </div>
         </div>
     </div>
