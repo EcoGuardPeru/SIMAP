@@ -23,7 +23,7 @@ Estudiantes de posgrado en temas de conservación
 | Nombre del Autor | Rol |
 |------------------|-----|
 | [Bravo Castillo Rojo Miguel Alejandro] | 
-| [Nombre del Socio 2] |
+| [Martínez Zeta José Alonso] |
 | [Nombre del Socio 3] | 
 
 
