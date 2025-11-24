@@ -1,0 +1,169 @@
+/* GENERAL */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f3f3;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: #222;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #ffe88a;
+}
+
+.sidebar h3 {
+  font-size: 15px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #a3d9ff;
+}
+
+.sidebar a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: white;
+  background: #333;
+  transition: 0.2s;
+}
+
+.sidebar a:hover {
+  background: #444;
+}
+
+/* CONTENIDO */
+.content {
+  margin-left: 260px;
+  padding: 25px;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+/* SECCIONES */
+section {
+  display: none;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+section:target {
+  display: block;
+}
+
+/* TARJETAS */
+.card {
+  background: #fefefe;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.yellow {
+  background: #fff89a;
+}
+.pink {
+  background: #ffb2dd;
+}
+.lightpink {
+  background: #ffc7ea;
+}
+.red {
+  background: #ff8c8c;
+}
+.blue {
+  background: #bde7ff;
+}
+.green {
+  background: #d4f8a9;
+}
+
+/* COMUNIDAD CIENTÍFICA */
+.comunidad {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.comunidad h2 {
+  font-size: 1.8rem;
+  color: var(--verde-principal);
+  margin-bottom: 1rem;
+}
+
+.comunidad h3 {
+  font-size: 1.2rem;
+  color: var(--azul-secundario);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.comunidad .comunidad-bloque {
+  margin-bottom: 1.5rem;
+}
+
+.comunidad .comunidad-bloque ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.comunidad .comunidad-bloque li {
+  margin-bottom: 0.5rem;
+}
+
+.comunidad .comunidad-bloque a {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  background-color: var(--gris-claro);
+  color: var(--negro);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.comunidad .comunidad-bloque a:hover {
+  background-color: var(--verde-principal);
+  color: var(--blanco);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+  }
+}
