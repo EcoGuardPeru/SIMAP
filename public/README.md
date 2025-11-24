@@ -24,7 +24,7 @@ Estudiantes de posgrado en temas de conservación
 |------------------|-----|
 | [Bravo Castillo Rojo Miguel Alejandro] | 
 | [Martínez Zeta José Alonso] |
-| [Nombre del Socio 3] | 
+| [Tuesta Gutierrez, Bryan Jimmy] | 
 
 
 
