@@ -1,0 +1,129 @@
+:root {
+    --verde: #008f39;
+    --azul: #2A4DAF;
+    --gris: #F3F7F9;
+    --negro: #222;
+    --blanco: #fff;
+    --sombra: 0 4px 18px rgba(0,0,0,0.13);
+    --borde: 14px;
+    --primary-color: var(--verde);
+}
+
+/* Contenedor principal para la gestión operativa (layout flex) */
+.gestion-layout {
+    display: flex;
+    gap: 20px;
+    padding: 0; /* Remover padding del content-box para manejarlo internamente */
+    min-height: 600px;
+}
+
+/* Estilos de la barra lateral (Sidebar) */
+.sidebar {
+    width: 250px;
+    background: var(--negro);
+    color: var(--blanco);
+    padding: 20px;
+    border-radius: 15px 0 0 15px; /* Bordes redondeados solo a la izquierda */
+    flex-shrink: 0;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: var(--verde);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gris);
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: var(--blanco);
+    background: #333;
+    transition: background-color 0.2s, color 0.2s;
+    font-weight: 500;
+}
+
+.sidebar a:hover {
+    background: #444;
+}
+
+.sidebar a.active {
+    background: var(--verde);
+    color: var(--blanco);
+    box-shadow: 0 2px 8px rgba(0, 143, 57, 0.4);
+}
+
+/* Estilos del contenido principal (Main Content) */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.content h2#titulo {
+    color: var(--azul);
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.content section {
+    background: var(--gris);
+    padding: 25px;
+    border-radius: var(--borde);
+    box-shadow: var(--sombra);
+    margin-bottom: 20px;
+}
+
+.content section h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.content section p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.content section ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.content section li {
+    margin-bottom: 8px;
+    color: var(--negro);
+}
+
+/* Media Query para responsividad en dispositivos pequeños */
+@media (max-width: 768px) {
+    .gestion-layout {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .content-box {
+        border-radius: 15px; /* Restaurar bordes redondeados */
+    }
+
+    .sidebar {
+        width: 100%;
+        border-radius: 15px;
+    }
+    
+    .content {
+        padding: 0;
+    }
+    
+    .content h2#titulo {
+        text-align: center;
+    }
+}

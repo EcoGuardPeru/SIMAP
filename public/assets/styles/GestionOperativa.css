@@ -1,0 +1,158 @@
+:root {
+    --verde: #008f39;
+    --azul: #2A4DAF;
+    --gris: #F3F7F9;
+    --negro: #222;
+    --blanco: #fff;
+    --sombra: 0 4px 18px rgba(0,0,0,0.13);
+    --borde: 14px;
+    --alerta: #C12C30;
+    --primary-color: var(--verde); /* Usamos verde como color principal */
+}
+
+.gestion-operativa-container {
+    padding: 2em;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5em;
+    margin-bottom: 2em;
+}
+
+.stat-card {
+    background: var(--gris);
+    border-radius: var(--borde);
+    padding: 1.5em;
+    box-shadow: var(--sombra);
+    text-align: center;
+}
+
+.stat-card h3 {
+    margin: 0;
+    font-size: 1em;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.stat-card .value {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 0.2em;
+}
+
+.task-list-container {
+    background: var(--blanco);
+    border-radius: var(--borde);
+    box-shadow: var(--sombra);
+    padding: 2em;
+}
+
+.task-list-container h3 {
+    color: var(--azul);
+    margin-top: 0;
+    border-bottom: 2px solid var(--gris);
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+}
+
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.task-table th, .task-table td {
+    padding: 0.8em;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.task-table th {
+    background-color: var(--gris);
+    color: var(--negro);
+    font-weight: 600;
+}
+
+.task-table tr:last-child td {
+    border-bottom: none;
+}
+
+.status-tag {
+    display: inline-block;
+    padding: 0.4em 0.8em;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.status-tag.pendiente {
+    background-color: #f7e098;
+    color: #a07d00;
+}
+
+.status-tag.en-curso {
+    background-color: #a3d9ff;
+    color: #1e6091;
+}
+
+.status-tag.completada {
+    background-color: #c3e6cb;
+    color: #155724;
+}
+
+.action-btn {
+    padding: 0.4em 0.8em;
+    background: var(--azul);
+    color: var(--blanco);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background 0.2s;
+}
+
+.action-btn:hover {
+    background: var(--verde);
+}
+
+@media (max-width: 600px) {
+    .gestion-operativa-container {
+        padding: 1em;
+    }
+    .task-table, .task-table thead, .task-table tbody, .task-table th, .task-table td, .task-table tr { 
+		display: block; 
+	}
+	
+	.task-table thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	.task-table tr { border: 1px solid #ccc; margin-bottom: 15px; border-radius: 8px;}
+	
+	.task-table td { 
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+		text-align: right;
+        font-size: 0.9em;
+	}
+	
+	.task-table td:before { 
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		content: attr(data-label);
+		font-weight: bold;
+		text-align: left;
+        color: var(--azul);
+	}
+}

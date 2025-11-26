@@ -1,0 +1,123 @@
+:root {
+    --verde: #008f39;
+    --azul: #2A4DAF;
+    --gris: #F3F7F9;
+    --negro: #222;
+    --blanco: #fff;
+    --sombra: 0 4px 18px rgba(0,0,0,0.13);
+    --borde: 14px;
+    --alerta: #C12C30;
+    --warning: #FFC300;
+}
+
+.sistema-alertas-container {
+    padding: 2em;
+}
+
+.alertas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5em;
+    margin-bottom: 2em;
+}
+
+.alerta-card {
+    background: var(--gris);
+    border-radius: var(--borde);
+    padding: 1.5em;
+    box-shadow: var(--sombra);
+    border-left: 5px solid;
+    transition: transform 0.2s;
+}
+
+.alerta-card:hover {
+    transform: translateY(-3px);
+}
+
+.alerta-card.roja {
+    border-color: var(--alerta);
+}
+
+.alerta-card.amarilla {
+    border-color: var(--warning);
+}
+
+.alerta-card.verde {
+    border-color: var(--verde);
+}
+
+.alerta-card h3 {
+    margin-top: 0;
+    color: var(--negro);
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alerta-card p {
+    color: #666;
+    margin: 0.5em 0;
+    font-size: 0.95em;
+}
+
+.alerta-card .tag {
+    display: inline-block;
+    padding: 0.3em 0.8em;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-top: 0.8em;
+}
+
+.alerta-card .tag.alta {
+    background: var(--alerta);
+    color: var(--blanco);
+}
+
+.alerta-card .tag.media {
+    background: var(--warning);
+    color: var(--negro);
+}
+
+.alerta-card .tag.baja {
+    background: var(--verde);
+    color: var(--blanco);
+}
+
+.mapa-alertas {
+    height: 450px;
+    background: var(--blanco);
+    border: 1px solid #ddd;
+    border-radius: var(--borde);
+    margin-bottom: 2em;
+    /* Simulación de un mapa con la imagen de PUNO con alertas */
+    background-image: url('/images/puno.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blanco);
+    font-size: 1.5em;
+    text-shadow: 1px 1px 2px var(--negro);
+}
+
+.filtro-alertas {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 1.5em;
+    flex-wrap: wrap;
+}
+
+.filtro-alertas select {
+    padding: 0.5em;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+@media (max-width: 600px) {
+    .sistema-alertas-container {
+        padding: 1em;
+    }
+}

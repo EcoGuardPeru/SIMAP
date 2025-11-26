@@ -8,14 +8,13 @@
     <link rel="stylesheet" href="/public/assets/styles/AnalisisAmbiental.css">
     <link rel="stylesheet" href="/public/assets/styles/comunidad.css">
     <link rel="stylesheet" href="/public/assets/styles/sistemaAlertas.css">
+    <link rel="stylesheet" href="/public/assets/styles/GestionOperativa.css">
 </head>
 <body>
-    <!-- SECCIÓN DE LOGIN -->
     <div id="loginSection">
         <div class="login-container">
-            <!-- ESPACIO PARA EL LOGO -->
             <div class="logo-container">
-                <img src="images//lgo.PNG" alt="Logo SIMAP" id="loginLogo">
+                <img src="/public/images/lgo.PNG" alt="Logo SIMAP" id="loginLogo">
              
             </div>
 
@@ -75,7 +74,6 @@
         </div>
     </div>
 
-    <!-- SECCION MENU -->
     <div id="dashboardSection" class="hidden">
         <header class="dashboard-header">
             <div class="header-content">
@@ -87,7 +85,6 @@
             </div>
         </header>
 
-        <!-- VISTA PRINCIPAL DEL DASHBOARD -->
         <div id="dashboardHome">
             <main class="dashboard-main">
                 <div class="welcome-section">
@@ -129,35 +126,146 @@
             </main>
         </div>
 
-        <!-- SECCIÓN SISTEMA DE ALERTAS -->
         <div id="sistemaAlertasSection" class="hidden section-content">
             <button class="btn-back">← Volver al Dashboard</button>
             <div class="content-box">
                 <h2>🚨 Sistema de Alertas</h2>
-                <!-- ESPACIO VACÍO PARA TU CONTENIDO --> 
-                
-                
+                <div class="sistema-alertas-container">
+                    <p>Visualiza y gestiona las alertas en tiempo real generadas por el sistema de monitoreo.</p>
+                    
+                    <div class="mapa-alertas">
+                        Mapa Interactivo de Puntos de Alerta (Puno)
+                    </div>
+                    
+                    <h3>Filtros de Búsqueda</h3>
+                    <div class="filtro-alertas">
+                        <select>
+                            <option>Región: Puno</option>
+                            <option>Región: Madre de Dios</option>
+                            <option>Región: Loreto</option>
+                        </select>
+                        <select>
+                            <option>Tipo de Alerta: Deforestación</option>
+                            <option>Tipo de Alerta: Incendio</option>
+                            <option>Tipo de Alerta: Actividad Humana</option>
+                        </select>
+                        <select>
+                            <option>Prioridad: Todas</option>
+                            <option>Prioridad: Alta</option>
+                            <option>Prioridad: Media</option>
+                            <option>Prioridad: Baja</option>
+                        </select>
+                    </div>
+                    
+                    <h3>Alertas Activas (7)</h3>
+                    <div class="alertas-grid">
+                        
+                        <div class="alerta-card roja">
+                            <h3>⚠️ Alerta de Deforestación</h3>
+                            <p>Coordenadas: -14.56, -70.89</p>
+                            <p>Fecha/Hora: 2025-11-24 09:30 AM</p>
+                            <p>Área Impactada: 1.2 Ha</p>
+                            <span class="tag alta">Prioridad Alta</span>
+                        </div>
+                        
+                        <div class="alerta-card amarilla">
+                            <h3>🔥 Riesgo de Incendio</h3>
+                            <p>Coordenadas: -14.40, -70.75</p>
+                            <p>Fecha/Hora: 2025-11-23 04:00 PM</p>
+                            <p>Índice Térmico: 0.85</p>
+                            <span class="tag media">Prioridad Media</span>
+                        </div>
+                        
+                        <div class="alerta-card roja">
+                            <h3>👤 Actividad Ilegal Detectada</h3>
+                            <p>Coordenadas: -14.62, -70.95</p>
+                            <p>Fecha/Hora: 2025-11-24 10:15 AM</p>
+                            <p>Fuente: Sensor Acústico/IoT</p>
+                            <span class="tag alta">Prioridad Alta</span>
+                        </div>
 
-
-
-            </div>
+                         <div class="alerta-card verde">
+                            <h3>🌱 Alerta de Recuperación NDVI</h3>
+                            <p>Coordenadas: -14.35, -70.60</p>
+                            <p>Fecha/Hora: 2025-11-22 08:00 AM</p>
+                            <p>Detalle: +0.05 en NDVI</p>
+                            <span class="tag baja">Prioridad Baja</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                </div>
         </div>
 
 
-
-
-
-        <!-- SECCIÓN GESTIÓN OPERATIVA -->
-        <div id="gestionSection" class="hidden section-content">
+<div id="gestionSection" class="hidden section-content">
             <button class="btn-back">← Volver al Dashboard</button>
-            <div class="content-box">
+            <div class="content-box gestion-layout">
                 <h2>📁 Gestión Operativa</h2>
-                <!-- ESPACIO VACÍO PARA TU CONTENIDO -->
-            </div>
+                
+                <div class="sidebar">
+                    <h2>MÓDULOS OPERATIVOS</h2>
+
+                    <a href="#panel" class="active" data-target="panel">Panel de Control</a>
+                    <a href="#patrullas" data-target="patrullas">Gestión de Patrullas</a>
+                    <a href="#reportes" data-target="reportes">Reportes y Documentación</a>
+                    <a href="#emergencias" data-target="emergencias">Emergencias</a>
+                </div>
+
+                <main class="content">
+                    <h2 id="titulo">Panel de Control Operativo</h2>
+
+                    <section id="panel">
+                        <h3>📊 Panel de Control</h3>
+                        <p>Visualización de KPIs principales, estadísticas operativas y gráficos de tendencias.</p>
+                        <ul>
+                            <li>KPIs principales</li>
+                            <li>Estadísticas operativas</li>
+                            <li>Gráficos de tendencias</li>
+                            <li>Calendario de operaciones</li>
+                        </ul>
+                    </section>
+
+                    <section id="patrullas" hidden>
+                        <h3>🗺️ Gestión de Patrullas</h3>
+                        <p>Monitoreo en tiempo real de unidades en campo y asignación de tareas.</p>
+                        <ul>
+                            <li>Mapa con ubicación de unidades</li>
+                            <li>Tabla de estado de patrullas</li>
+                            <li>Asignación de misiones</li>
+                            <li>Historial de patrullajes</li>
+                        </ul>
+                    </section>
+
+                    <section id="reportes" hidden>
+                        <h3>📄 Reportes y Documentación</h3>
+                        <p>Herramientas para la generación de reportes y acceso a la biblioteca de documentos.</p>
+                        <ul>
+                            <li>Generador de reportes</li>
+                            <li>Biblioteca de documentos</li>
+                            <li>Exportar datos</li>
+                            <li>Bitácora digital</li>
+                        </ul>
+                    </section>
+
+                    <section id="emergencias" hidden>
+                        <h3>⚠️ Emergencias</h3>
+                        <p>Acceso rápido a protocolos de emergencia y contactos clave.</p>
+                        <ul>
+                            <li>Botón de pánico</li>
+                            <li>Protocolos activos</li>
+                            <li>Planes de evacuación</li>
+                            <li>Contactos de emergencia</li>
+                        </ul>
+                    </section>
+                </main>
+                </div>
         </div>
+
+
+        
         
 
-        <!-- SECCIÓN ANÁLISIS AMBIENTAL -->
         <div id="analisisSection" class="hidden section-content">
             <button class="btn-back">← Volver al Dashboard</button>
             <div class="content-box">
@@ -312,7 +420,6 @@
             </div>
         </div>
 
-        <!-- SECCIÓN INVESTIGACIÓN AVANZADA -->
         <div id="investigacionSection" class="hidden section-content">
             <button class="btn-back">← Volver al Dashboard</button>
             <div class="content-box">
@@ -321,14 +428,12 @@
                     <meta charset="UTF-8">
                     <title>SIMAP • Panel Unificado</title>
                 
-                    <!-- Mantienes ambos estilos para conservar el diseño EXACTO -->
                     <link rel="stylesheet" href="/public/assets/styles/Investigacion_avanzada.css">
                     <link rel="stylesheet" href="/public/assets/styles/styles.css">
                 </head>
                 
                 <body>
                 
-                <!-- ================= HEADER ================= -->
                 <header>
                     <nav>
                         <div class="logo">EcoGuard Perú</div>
@@ -341,7 +446,6 @@
                 
                 <main>
                 
-                    <!-- =============== SECCIÓN 1 — ANÁLISIS ESTADÍSTICO ================= -->
                     <section class="panel" id="estadistico">
                         <h1>Panel de Tendencias y Modelos Predictivos</h1>
                 
@@ -411,7 +515,6 @@
                 
                 
                 
-                    <!-- =============== SECCIÓN 2 — HERRAMIENTAS ESPECIALIZADAS ================= -->
                     <section class="panel" id="herramientas">
                         <h1>Herramientas Especializadas</h1>
                 
@@ -462,7 +565,6 @@
                 </main>
                 
                 
-                <!-- ================= FOOTER ================= -->
                 <footer>
                     <p>&copy; 2025 EcoGuard Perú</p>
                 </footer>
@@ -471,7 +573,6 @@
             </div>
         </div>
 
-        <!-- SECCIÓN COMUNIDAD -->
         <div id="comunidadSection" class="hidden section-content">
             <button class="btn-back">← Volver al Dashboard</button>
             <div class="content-box">
@@ -498,11 +599,7 @@
       <a href="#endpoints">Endpoints disponibles</a>
     </div>
 
-    <!-- =====================================
-            CONTENIDO
-======================================= -->
     <div class="content">
-      <!-- Foro -->
       <section id="categorias">
         <h2>Categorías temáticas</h2>
         <div class="card pink">Ejemplo de categoría 1</div>
@@ -527,7 +624,6 @@
         <div class="card lightpink">Campo de búsqueda (visual)</div>
       </section>
 
-      <!-- Proyectos -->
       <section id="mis-proyectos">
         <h2>Mis proyectos</h2>
         <div class="card red">Proyecto personal 1</div>
@@ -545,14 +641,12 @@
         <div class="card red">Formulario ficticio aquí</div>
       </section>
 
-      <!-- Publicaciones -->
       <section id="publicaciones">
         <h2>Publicaciones y resultados</h2>
         <div class="card blue">Publicación 1</div>
         <div class="card blue">Publicación 2</div>
       </section>
 
-      <!-- API -->
       <section id="documentacion">
         <h2>Documentación de la API</h2>
         <div class="card green">Descripción general de la API</div>
