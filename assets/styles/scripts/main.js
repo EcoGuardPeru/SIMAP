@@ -16,7 +16,7 @@ const userEmailDisplay = document.getElementById('userEmail');
 // FUNCIONES AUXILIARES
 // ============================================
 
-// Mostrar alertas
+
 function showAlert(message, type) {
     alertBox.textContent = message;
     alertBox.className = `alert ${type}`;
