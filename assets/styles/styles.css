@@ -625,6 +625,18 @@ body {
     z-index: 1000;
 }
 
+#gestionSection .btn-back {
+    /* AJUSTE 4: Mover el botón horizontalmente para que quede a la derecha del sidebar fijo */
+    margin-left: 280px;
+    
+    /* Separación vertical después del encabezado superior */
+    margin-top: 10px;
+    margin-bottom: 20px; 
+    
+    position: relative;
+    z-index: 1000;
+}
+
 
 
 @media (max-width: 768px) {
