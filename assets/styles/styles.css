@@ -554,6 +554,51 @@ body {
 }
 
 
+/* ============================================ */
+/* ESTILOS DE INICIO DE SESIÓN CON GOOGLE */
+/* ============================================ */
+
+.social-login-options {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-login-options p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 0.95em;
+}
+
+.google-signin-btn {
+    background-color: #4285F4; /* Color azul de Google */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px 10px 10px; /* Más padding a la izquierda para el icono */
+    font-size: 1em;
+    cursor: pointer;
+    display: flex; /* Para alinear el icono y el texto */
+    align-items: center;
+    justify-content: center; /* Centrar contenido dentro del botón */
+    margin: 0 auto; /* Centrar el botón mismo */
+    gap: 10px; /* Espacio entre el icono y el texto */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.google-signin-btn:hover {
+    background-color: #357ae8; /* Un azul ligeramente más oscuro al pasar el mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.google-icon {
+    width: 24px; /* Tamaño del icono de Google */
+    height: 24px;
+    /* Un pequeño ajuste para asegurar que el icono no tenga un borde feo si es SVG */
+    vertical-align: middle; 
+}
+
+
 /* Responsive para pantallas pequeñas */
 @media (max-width: 768px) {
     .footer-container {
