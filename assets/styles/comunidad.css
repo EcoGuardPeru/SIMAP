@@ -11,17 +11,27 @@ body {
   min-height: 100vh;
 }
 
-/* SIDEBAR */
 .sidebar {
   width: 260px;
   background: #222;
   color: white;
   padding: 20px;
   box-sizing: border-box;
-  position: fixed;
-  height: 100vh;
-  overflow-y: auto;
+  
+  /* Mantenemos FIXED para que siempre se vea */
+  position: fixed; 
+  z-index: 100;
+  left: 0;
+  
+  /* AJUSTE 1: Posicionamiento vertical. Asumimos el encabezado superior es de 80px de alto. */
+  top: 80px; 
+  /* AJUSTE 2: Calculamos la altura restante para que el scroll funcione hasta el final */
+  height: calc(100vh - 80px);
+  
+  overflow-y: auto; /* Permite desplazamiento vertical para ver todos los enlaces */
 }
+
+
 
 .sidebar h2 {
   margin-top: 0;
@@ -53,11 +63,13 @@ body {
 
 /* CONTENIDO */
 .content {
-  margin-left: 260px;
+  /* AJUSTE 3: Empujar el contenido principal a la derecha para hacer espacio al sidebar (260px + 20px de margen) */
+  margin-left: 280px; 
   padding: 25px;
   flex: 1;
   box-sizing: border-box;
 }
+
 
 /* SECCIONES */
 section {
