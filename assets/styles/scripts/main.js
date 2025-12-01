@@ -12,6 +12,24 @@ const rememberCheckbox = document.getElementById('remember');
 const logoutBtn = document.getElementById('logoutBtn');
 const userEmailDisplay = document.getElementById('userEmail');
 
+// Referencias a las secciones del Dashboard
+const dashboardHome = document.getElementById('dashboardHome');
+const sistemaAlertasSection = document.getElementById('sistemaAlertasSection');
+const gestionSection = document.getElementById('gestionSection');
+const analisisSection = document.getElementById('analisisSection');
+const investigacionSection = document.getElementById('investigacionSection');
+const comunidadSection = document.getElementById('comunidadSection');
+
+// Mapeo de data-section a elementos del DOM
+const sections = {
+    'sistema-alertas': sistemaAlertasSection,
+    'gestion': gestionSection,
+    'analisis': analisisSection,
+    'investigacion': investigacionSection,
+    'comunidad': comunidadSection
+};
+
+
 // ============================================
 // FUNCIONES AUXILIARES
 // ============================================
@@ -33,6 +51,39 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
+// Función para mostrar una sección específica
+function showSection(sectionName) {
+    // Ocultar todas las secciones
+    dashboardHome.classList.add('hidden');
+    
+    // Ocultar todas las secciones de contenido
+    Object.values(sections).forEach(section => {
+        if (section) section.classList.add('hidden');
+    });
+    
+    // Mostrar la sección seleccionada
+    if (sectionName === 'home') {
+        dashboardHome.classList.remove('hidden');
+    } else if (sections[sectionName]) {
+        sections[sectionName].classList.remove('hidden');
+        
+        // Inicializar la navegación interna si es la sección de Gestión Operativa
+        if (sectionName === 'gestion') {
+            setupGestionSidebar();
+        }
+    } else {
+        // Si la sección no existe
+        console.error(`Sección "${sectionName}" no encontrada`);
+        dashboardHome.classList.remove('hidden');
+    }
+}
+
+// Función para volver al dashboard principal
+function backToDashboard() {
+    showSection('home');
+}
+
+
 // Cambiar entre login y dashboard
 function showDashboard(email) {
     loginSection.classList.add('hidden');
@@ -45,6 +96,68 @@ function showLogin() {
     loginSection.classList.remove('hidden');
     loginForm.reset();
 }
+
+// ============================================
+// FUNCIONALIDAD ADICIONAL: NAVEGACIÓN DE GESTIÓN OPERATIVA
+// ============================================
+
+// Función para manejar la navegación interna de la sección de Gestión Operativa
+function setupGestionSidebar() {
+    const gestionSection = document.getElementById('gestionSection');
+    if (!gestionSection) return;
+
+    const sidebarLinks = gestionSection.querySelectorAll('.sidebar a');
+    const contentSections = gestionSection.querySelectorAll('.content section');
+    const emergencyButton = gestionSection.querySelector('.emergency-button');
+
+    function showContentSection(targetId) {
+        contentSections.forEach(section => {
+            section.style.display = 'none';
+        });
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            targetSection.style.display = 'block';
+        }
+        
+        // Mostrar/Ocultar el botón de emergencia (HU14) en la sección de Monitoreo
+        if (targetId === 'monitoreo-despliegue') {
+            if (emergencyButton) emergencyButton.style.display = 'block';
+        } else {
+            if (emergencyButton) emergencyButton.style.display = 'none';
+        }
+    }
+
+    sidebarLinks.forEach(link => {
+        // Remover listeners anteriores para evitar duplicados
+        link.removeEventListener('click', handleSidebarClick);
+        // Añadir el nuevo listener
+        link.addEventListener('click', handleSidebarClick);
+    });
+    
+    function handleSidebarClick(e) {
+        e.preventDefault();
+            
+        // 1. Quitar 'active' de todos los enlaces y ponerlo en el clickeado
+        sidebarLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+            
+        // 2. Mostrar la sección de contenido correspondiente
+        const targetId = this.getAttribute('href').substring(1);
+        showContentSection(targetId);
+
+        // 3. Opcional: Actualizar el título principal
+        gestionSection.querySelector('#titulo').textContent = this.textContent;
+    }
+
+    // Mostrar la sección activa por defecto al cargar (Monitoreo y Despliegue)
+    const initialActiveLink = gestionSection.querySelector('.sidebar a.active');
+    if (initialActiveLink) {
+        const targetId = initialActiveLink.getAttribute('href').substring(1);
+        showContentSection(targetId);
+        gestionSection.querySelector('#titulo').textContent = initialActiveLink.textContent;
+    }
+}
+
 
 // ============================================
 // VERIFICAR SESIÓN AL CARGAR LA PÁGINA
@@ -147,50 +260,6 @@ document.querySelector('.register-link a').addEventListener('click', function(e)
 // FUNCIONALIDAD DEL DASHBOARD
 // ============================================
 
-// Referencias a las secciones
-const dashboardHome = document.getElementById('dashboardHome');
-const sistemaAlertasSection = document.getElementById('sistemaAlertasSection');
-const gestionSection = document.getElementById('gestionSection');
-const analisisSection = document.getElementById('analisisSection');
-const investigacionSection = document.getElementById('investigacionSection');
-const comunidadSection = document.getElementById('comunidadSection');
-
-// Mapeo de data-section a elementos del DOM
-const sections = {
-    'sistema-alertas': sistemaAlertasSection,
-    'gestion': gestionSection,
-    'analisis': analisisSection,
-    'investigacion': investigacionSection,
-    'comunidad': comunidadSection
-};
-
-// Función para mostrar una sección específica
-function showSection(sectionName) {
-    // Ocultar todas las secciones
-    dashboardHome.classList.add('hidden');
-    
-    // Ocultar todas las secciones de contenido
-    Object.values(sections).forEach(section => {
-        if (section) section.classList.add('hidden');
-    });
-    
-    // Mostrar la sección seleccionada
-    if (sectionName === 'home') {
-        dashboardHome.classList.remove('hidden');
-    } else if (sections[sectionName]) {
-        sections[sectionName].classList.remove('hidden');
-    } else {
-        // Si la sección no existe
-        console.error(`Sección "${sectionName}" no encontrada`);
-        dashboardHome.classList.remove('hidden');
-    }
-}
-
-// Función para volver al dashboard principal
-function backToDashboard() {
-    showSection('home');
-}
-
 // Cerrar sesión
 logoutBtn.addEventListener('click', function() {
     if (confirm('¿Estás seguro de que quieres cerrar sesión?')) {
@@ -200,7 +269,7 @@ logoutBtn.addEventListener('click', function() {
 });
 
 // Click en las tarjetas del dashboard
-const cards = document.querySelectorAll('.card');
+const cards = document.querySelectorAll('.cards-grid .card');
 cards.forEach(card => {
     card.addEventListener('click', function() {
         const section = this.getAttribute('data-section');

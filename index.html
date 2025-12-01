@@ -224,65 +224,206 @@
 <div id="gestionSection" class="hidden section-content">
             <button class="btn-back">← Volver al Dashboard</button>
             <div class="content-box gestion-layout">
-                <h2>📁 </h2>
                 
                 <div class="sidebar">
-                    <h2>Gestion Operativa</h2>
-
-                    <a href="#panel" class="active" data-target="panel">Panel de Control</a>
-                    <a href="#patrullas" data-target="patrullas">Gestión de Patrullas</a>
-                    <a href="#reportes" data-target="reportes">Reportes y Documentación</a>
-                    <a href="#emergencias" data-target="emergencias">Emergencias</a>
+                    <h2>Gestión Operativa</h2>
+                    <a href="#monitoreo-despliegue" class="active" data-target="monitoreo-despliegue">Monitoreo y Despliegue</a>
+                    <a href="#inteligencia-reportes" data-target="inteligencia-reportes">Inteligencia y Reportes</a>
+                    <a href="#gestion-equipos" data-target="gestion-equipos">Gestión de Equipos y Usuarios</a>
+                    <a href="#simulacion" data-target="simulacion">Simulación y Entrenamiento</a>
                 </div>
 
                 <main class="content">
-                    <h2 id="titulo">Panel de Control Operativo</h2>
+                    <h2 id="titulo">Panel de Operaciones SIMAP</h2>
+                    
+                    <button class="emergency-button" style="display: none;"> 
+                        🚨 Botón de Emergencia (Ubicación GPS)
+                    </button>
 
-                    <section id="panel">
-                        <h3>📊 Panel de Control</h3>
-                        <p>Visualización de KPIs principales, estadísticas operativas y gráficos de tendencias.</p>
-                        <ul>
-                            <li>KPIs principales</li>
-                            <li>Estadísticas operativas</li>
-                            <li>Gráficos de tendencias</li>
-                            <li>Calendario de operaciones</li>
-                        </ul>
+                    <section id="monitoreo-despliegue">
+                        <h3>🗺️ Monitoreo en Tiempo Real y Despliegue</h3>
+                        <p>Herramientas centrales de visualización y asignación de alertas.</p>
+                        
+                        <div class="map-operation">
+                            <p>Mapa Interactivo: Visualización de Puntos de Alerta y Unidades de Patrulla</p>
+                            
+                            <div class="map-operation-overlay">
+                                <h4>Herramientas de Despliegue</h4>
+                                <div class="form-group">
+                                    <label for="trayectoria">Trayectoria Histórica :</label>
+                                    <select id="trayectoria" class="form-control">
+                                        <option>Unidad 1 - Dron 001</option>
+                                        <option>Unidad 2 - Vehículo V04</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ruta">Cálculo de Ruta :</label>
+                                    <button class="action-btn" style="width: 100%;">Calcular Ruta Óptima a Alerta</button>
+                                </div>
+                                <div class="form-group">
+                                    <label for="impacto">Radio de Impacto :</label>
+                                    <button class="action-btn" style="width: 100%; background: var(--alerta);">Establecer Radio de Amenaza</button>
+                                </div>
+                                <div class="form-group">
+                                    <label>Asignación :</label>
+                                    <p style="font-size: 0.9em; margin: 5px 0 0;">Arrastre la alerta hacia una unidad en el mapa.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-box" style="padding: 15px;">
+                            <h4>📸 Carga de Evidencia en Campo </h4>
+                            <p>Cargue y geolocalice fotos/videos para documentar el hallazgo de evidencia.</p>
+                            <div class="drag-drop-area">
+                                Arrastre y suelte archivos aquí o haga clic para subir. (Máx. 50MB)
+                            </div>
+                            <button class="emergency-button" style="background: var(--alerta); margin-top: 15px; display: block; width: 100%; font-size: 1em;">
+                                🚨 Botón de Emergencia 
+                            </button>
+                        </div>
                     </section>
 
-                    <section id="patrullas" hidden>
-                        <h3>🗺️ Gestión de Patrullas</h3>
-                        <p>Monitoreo en tiempo real de unidades en campo y asignación de tareas.</p>
-                        <ul>
-                            <li>Mapa con ubicación de unidades</li>
-                            <li>Tabla de estado de patrullas</li>
-                            <li>Asignación de misiones</li>
-                            <li>Historial de patrullajes</li>
-                        </ul>
+                    <section id="inteligencia-reportes" style="display: none;">
+                        <h3>📈 Inteligencia Operativa y Documentación</h3>
+                        
+                        <div class="content-box">
+                            <h4>📄 Generación de Reporte Ejecutivo </h4>
+                            <p>Genere un informe diario automatizado de actividades detectadas y respuestas ejecutadas.</p>
+                            <a href="#" class="action-btn" style="background: var(--azul); margin-right: 15px;">Generar Informe Ejecutivo Diario</a>
+                        </div>
+                        
+                        <div class="content-box" style="margin-top: 20px;">
+                            <h4>🚫 Historial de Alertas No Atendidas </h4>
+                            <p>Acceda a un historial de alertas no atendidas por zona y fecha para identificar puntos ciegos.</p>
+                            <div class="filtro-alertas" style="margin-bottom: 1em;">
+                                <select><option>Zona: Puno</option></select>
+                                <input type="date" class="form-control" style="width: 150px;">
+                            </div>
+                            <table class="task-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID Alerta</th>
+                                        <th>Fecha/Hora</th>
+                                        <th>Zona</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-label="ID Alerta">A-1234</td>
+                                        <td data-label="Fecha/Hora">2025-11-01 14:00</td>
+                                        <td data-label="Zona">Sector Oeste Puno</td>
+                                        <td data-label="Estado"><span class="status-tag pendiente">No Atendida</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="ID Alerta">A-1235</td>
+                                        <td data-label="Fecha/Hora">2025-11-02 09:15</td>
+                                        <td data-label="Zona">Alto Tambopata</td>
+                                        <td data-label="Estado"><span class="status-tag pendiente">No Atendida</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </section>
 
-                    <section id="reportes" hidden>
-                        <h3>📄 Reportes y Documentación</h3>
-                        <p>Herramientas para la generación de reportes y acceso a la biblioteca de documentos.</p>
-                        <ul>
-                            <li>Generador de reportes</li>
-                            <li>Biblioteca de documentos</li>
-                            <li>Exportar datos</li>
-                            <li>Bitácora digital</li>
-                        </ul>
-                    </section>
+                    <section id="gestion-equipos" style="display: none;">
+                        <h3>👥 Gestión de Recursos Humanos y Comunicación</h3>
 
-                    <section id="emergencias" hidden>
-                        <h3>⚠️ Emergencias</h3>
-                        <p>Acceso rápido a protocolos de emergencia y contactos clave.</p>
-                        <ul>
-                            <li>Botón de pánico</li>
-                            <li>Protocolos activos</li>
-                            <li>Planes de evacuación</li>
-                            <li>Contactos de emergencia</li>
-                        </ul>
+                        <h4>📊 Rendimiento de Equipos de Patrulla </h4>
+                        <div class="performance-grid">
+                            <div class="performance-card">
+                                <h4>Tiempo de Respuesta Promedio</h4>
+                                <span class="performance-value">12 min</span>
+                                <p><small>Comandante: Túpac</small></p>
+                            </div>
+                            <div class="performance-card">
+                                <h4>Alertas Atendidas (Mes)</h4>
+                                <span class="performance-value">92</span>
+                                <p><small>Tasa de Éxito: 95%</small></p>
+                            </div>
+                            <div class="performance-card warning">
+                                <h4>Falsas Alarmas (Mes)</h4>
+                                <span class="performance-value">4</span>
+                                <p><small>Comandante: Túpac</small></p>
+                            </div>
+                            <div class="performance-card">
+                                <h4>Unidades Activas</h4>
+                                <span class="performance-value">8</span>
+                                <p><small>de 10 unidades</small></p>
+                            </div>
+                        </div>
+
+                        <div class="content-box" style="margin-top: 30px;">
+                            <h4>💬 Chat Integrado de Operaciones </h4>
+                            <p>Comunicación directa con las unidades de campo asignadas a las alertas.</p>
+                            <div class="chat-box">
+                                <div class="chat-messages">
+                                    <p><b>Operador Central:</b> Unidad P02, ¿situación en Alerta A-1236?</p>
+                                    <p style="text-align: right;"><b>Unidad P02:</b> Confirmamos deforestación. Solicitamos refuerzos.</p>
+                                </div>
+                                <div class="chat-input">
+                                    <input type="text" placeholder="Escribir mensaje a unidad...">
+                                    <button>Enviar</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="content-box" style="margin-top: 30px;">
+                            <h4>🔐 Gestión de Permisos de Acceso </h4>
+                            <p>Defina áreas protegidas y funciones que cada perfil de usuario puede monitorear.</p>
+                            <table class="task-table">
+                                <thead>
+                                    <tr>
+                                        <th>Usuario</th>
+                                        <th>Rol</th>
+                                        <th>Áreas Monitoreables</th>
+                                        <th>Funciones Clave</th>
+                                        <th>Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-label="Usuario">Comandante A</td>
+                                        <td data-label="Rol">Comandante</td>
+                                        <td data-label="Áreas Monitoreables">Todas</td>
+                                        <td data-label="Funciones Clave">Simulación , Reportes </td>
+                                        <td data-label="Acción"><button class="action-btn">Editar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Usuario">Operador B</td>
+                                        <td data-label="Rol">Operador SIMAP</td>
+                                        <td data-label="Áreas Monitoreables">Puno y Cusco</td>
+                                        <td data-label="Funciones Clave">Asignación , Chat </td>
+                                        <td data-label="Acción"><button class="action-btn">Editar</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    
+                    <section id="simulacion" style="display: none;">
+                        <h3>🧪 Simulación y Entrenamiento</h3>
+                        <div class="content-box">
+                            <h4>🔥 Simulación de Escenarios de Emergencia </h4>
+                            <p>Simule "gran deforestación" o "conato de incendio" para entrenar al equipo sin exponerlos a riesgos reales.</p>
+                            <div class="form-group">
+                                <label for="scenario">Seleccionar Escenario:</label>
+                                <select id="scenario" class="form-control">
+                                    <option>Conato de Incendio Forestal (Clima Seco)</option>
+                                    <option>Derrame Químico en Río</option>
+                                    <option>Gran Deforestación Ilegal Súbita</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="zone">Zona de Impacto:</label>
+                                <input type="text" id="zone" class="form-control" placeholder="Coordenadas o Área Protegida">
+                            </div>
+                            <button class="action-btn" style="background: #008f39; font-weight: bold; width: 250px; margin-top: 15px;">Iniciar Simulación</button>
+                            <p style="margin-top: 15px;"><small>La simulación inyectará alertas ficticias en el módulo de Monitoreo y Despliegue.</small></p>
+                        </div>
                     </section>
                 </main>
-                </div>
+            </div>
         </div>
 
 
